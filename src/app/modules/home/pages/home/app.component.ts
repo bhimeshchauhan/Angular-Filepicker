@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
+
+
 export class AppComponent {
   title = 'FILEPICKER';
 }
