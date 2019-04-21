@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/home/app.component';
-import { UploadButton } from '../../shared/components/button';
 
 @NgModule({
   declarations: [
@@ -10,8 +9,7 @@ import { UploadButton } from '../../shared/components/button';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    UploadButton
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

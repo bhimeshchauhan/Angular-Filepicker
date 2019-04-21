@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-btn',
@@ -6,6 +6,11 @@ import {Component} from "@angular/core";
   styleUrls: ['./button.component.styl']
 })
 
-export class AppComponent {
-  name = 'Upload File';
+export class ButtonComponent implements OnInit{
+  @Input() isLoading = false;
+  @Input() message: string;
+
+  constructor() {}
+
+  ngOnInit() {}
 }
