@@ -4,6 +4,7 @@ import { HistoryComponent} from "@app/modules/home/components/historyComponent/h
 import { HomeComponent } from "@app/modules/home/components/homeComponent/home.component";
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'history', component: HistoryComponent}
 ];
@@ -13,3 +14,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [HomeComponent, HistoryComponent]

@@ -2,20 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatIconModule, MatListModule, MatToolbarModule, MatButtonModule} from '@angular/material';
-import { AppRoutingModule } from './app-routing.module';
+import { MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './pages/home/app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

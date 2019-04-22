@@ -6,6 +6,7 @@ import {LayoutModule} from "@angular/cdk/layout";
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from "@angular/material";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterLink, RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
@@ -17,9 +18,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    RouterModule
   ],
   declarations: [ButtonComponent, NavigationComponent],
-  exports: [ButtonComponent, NavigationComponent]
+  exports: [ButtonComponent, NavigationComponent, RouterModule]
 })
 export class SharedModule {}
