@@ -2,13 +2,14 @@ import {HomepageComponent} from "@app/modules/home/components/homepageComponent/
 import {HistoryComponent} from "@app/modules/home/components/historyComponent/history.component";
 import {NgModule} from "@angular/core";
 import {DialogComponent} from "@app/modules/home/components/dialog/dialog.component";
-import {MatButtonModule, MatDialogModule} from "@angular/material";
+import {MatButtonModule, MatDialogModule, MatIconModule} from "@angular/material";
 import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
   declarations: [DialogComponent],
-  imports: [MatDialogModule, MatButtonModule, BrowserModule],
+  imports: [MatDialogModule, MatButtonModule, BrowserModule,
+    MatIconModule],
   exports: [DialogComponent]
 })
 export class ComponentModule { }

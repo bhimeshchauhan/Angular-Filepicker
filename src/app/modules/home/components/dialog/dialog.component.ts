@@ -16,6 +16,10 @@ export class DialogComponent implements OnInit{
   ngOnInit(){
   }
 
+  upload(): void{
+
+  }
+
   closeDialog(): void {
     this.dialogRef.close();
   }

@@ -1,11 +1,13 @@
 <div class="modal-body">
   <ul  *ngFor="let item of files">
-    <li>
-      <span *ngFor="let dummy of ' '.repeat(item.indentation).split(''), let x = index">&nbsp;&nbsp;&nbsp;&nbsp;</span><span>{{ item.name }}</span>
+    <li (click)="upload()">
+      <span *ngFor="let dummy of ' '.repeat(item.indentation).split(''), let x = index">&nbsp;&nbsp;&nbsp;&nbsp;</span><span>
+      <button type="button" mat-icon-button><mat-icon aria-label="Side nav toggle icon">library_add</mat-icon>
+        </button>{{ item.name }}</span>
     </li>
   </ul>
 </div>
 <div class="modal-btn">
-  <button mat-stroked-button (click)="uploadFile()" type="button">ok</button>
+  <button mat-stroked-button (click)="uploadFile()" type="button" disabled>ok</button>
   <button mat-stroked-button (click)="closeDialog()" type="button">cancel</button>
 </div>
