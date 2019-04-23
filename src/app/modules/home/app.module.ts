@@ -7,6 +7,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './pages/home/app.component';
 import {DialogComponent} from "@app/modules/home/components/dialog/dialog.component";
 import {ComponentModule} from "@app/modules/home/components/components.module";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ComponentModule} from "@app/modules/home/components/components.module";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    ComponentModule
+    ComponentModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

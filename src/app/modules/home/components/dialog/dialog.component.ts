@@ -12,5 +12,7 @@ export class DialogComponent{
   closeDialog(): void {
     this.dialogRef.close();
   }
-
+  uploadFile(): void {
+    this.dialogRef.close();
+  }
 }
