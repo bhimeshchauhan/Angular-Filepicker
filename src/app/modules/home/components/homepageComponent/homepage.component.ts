@@ -14,7 +14,7 @@ export class HomepageComponent {
   constructor(private dialog: MatDialog,
               private http: HttpClient) {}
 
-  nameArr: object = [{"name": "root", "indentation": 0}];
+  nameArr: {name: string, indentation: number}[] = [{"name": "root", "indentation": 0}];
 
   parseTree(obj, count): void{
     let that = this;
