@@ -3,11 +3,12 @@ import {HistoryComponent} from "@app/modules/home/components/historyComponent/hi
 import {NgModule} from "@angular/core";
 import {DialogComponent} from "@app/modules/home/components/dialog/dialog.component";
 import {MatButtonModule, MatDialogModule} from "@angular/material";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
   declarations: [DialogComponent],
-  imports: [MatDialogModule, MatButtonModule],
+  imports: [MatDialogModule, MatButtonModule, BrowserModule],
   exports: [DialogComponent]
 })
 export class ComponentModule { }

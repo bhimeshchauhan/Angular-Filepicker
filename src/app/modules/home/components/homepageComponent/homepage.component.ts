@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {MatDialog} from "@angular/material";
+import {Component, Inject} from "@angular/core";
+import {MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import {DialogComponent} from "@app/modules/home/components/dialog/dialog.component";
 import { HttpClient } from '@angular/common/http';
 import _ from 'underscore';
@@ -12,8 +12,26 @@ import _ from 'underscore';
 
 export class HomepageComponent {
   constructor(private dialog: MatDialog,
-              private http: HttpClient) { this.readData(); }
+              private http: HttpClient) {}
 
+  nameArr: object = [{"name": "root", "indentation": 0}];
+
+  parseTree(obj, count): void{
+    let that = this;
+    obj.forEach((item) => {
+      count += 1;
+      //count += 1
+      console.log(item.name, " indent ", count, item.name.length);
+      // this.data = {"name": item.name};
+      if(item.name.length > 1){
+        this.nameArr.push({"name": item.name, "indentation": count});
+      }
+      if(item.children && item.children.length != 0){
+         that.parseTree(item.children, count)
+      }
+      count -= 1
+    });
+  }
 
   readData(): void{
     this.http.get('assets/files.txt', { responseType: 'text' })
@@ -21,14 +39,17 @@ export class HomepageComponent {
         let fileData = data.split("\n");
         fileData.pop();
         console.log(fileData);
-
+      let that = this;
       this.arrangeIntoTree(fileData, function(tree) {
-        // tree.forEach((item) => {
-          console.log(tree)
-        // })
+        tree.forEach((item) => {
+          that.parseTree([item], 0);
+          // console.log([item])
+        })
       });
     });
   }
+
+
 
   arrangeIntoTree(paths, cb): void {
     var tree = [];
@@ -66,14 +87,18 @@ export class HomepageComponent {
     cb(tree);
   }
 
-
-
-
   openDialog(): void {
 
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '550px',
-      height: '550px'
+      height: '550px',
+      data: this.nameArr
+    });
+
+    dialogRef.afterOpened().subscribe(result =>{
+      // this.readData();
+      console.log("The dialog was opened.");
+      this.readData();
     });
 
     dialogRef.afterClosed().subscribe(result => {
