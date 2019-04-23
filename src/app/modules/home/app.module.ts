@@ -26,6 +26,6 @@ import {ComponentModule} from "@app/modules/home/components/components.module";
   ],
   providers: [],
   bootstrap: [AppComponent],
-  // entryComponents: [DialogComponent]
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }

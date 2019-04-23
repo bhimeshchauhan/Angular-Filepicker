@@ -4,16 +4,16 @@ import {DialogComponent} from "@app/modules/home/components/dialog/dialog.compon
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.styl'],
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.styl'],
 })
 
-export class HomeComponent {
+export class HomepageComponent {
   constructor(private dialog: MatDialog) {}
 
-  openDialog(e): void {
+  openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      // width: '250px',
+      width: '250px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
