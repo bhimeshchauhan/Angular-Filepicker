@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from "@angular/core";
 
 @Component({
-  selector: 'app-btn',
+  selector: 'app-history',
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.styl'],
 })

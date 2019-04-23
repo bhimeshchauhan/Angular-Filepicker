@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './pages/home/app.component';
+import {DialogComponent} from "@app/modules/home/components/dialog/dialog.component";
+import {ComponentModule} from "@app/modules/home/components/components.module";
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { AppComponent } from './pages/home/app.component';
     AppRoutingModule,
     SharedModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    ComponentModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents: [DialogComponent]
 })
 export class AppModule { }
